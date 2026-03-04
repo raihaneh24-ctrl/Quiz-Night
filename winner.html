@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Quiz Night Winner</title>
+<style>
+
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background: radial-gradient(circle at top,#1a0026,#0d001a 70%);
+overflow:hidden;
+color:white;
+}
+
+.container{
+text-align:center;
+background:rgba(255,255,255,0.05);
+padding:50px;
+border-radius:25px;
+backdrop-filter:blur(25px);
+box-shadow:0 0 50px #8a2be2;
+width:600px;
+max-width:95%;
+}
+
+h1{
+font-size:40px;
+background:linear-gradient(90deg,#00f5ff,#ff00c8);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+input{
+padding:12px;
+width:70%;
+border-radius:25px;
+border:none;
+outline:none;
+margin-top:20px;
+font-size:16px;
+text-align:center;
+}
+
+button{
+margin-top:20px;
+padding:10px 30px;
+border:none;
+border-radius:30px;
+background:linear-gradient(90deg,#8a2be2,#ff00c8);
+color:white;
+cursor:pointer;
+font-size:16px;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+box-shadow:0 0 15px #ff00c8;
+}
+
+#winnerDisplay{
+margin-top:40px;
+font-size:35px;
+font-weight:bold;
+position:relative;
+}
+
+.crown{
+font-size:40px;
+display:block;
+animation:bounce 1s infinite alternate;
+}
+
+.medal{
+font-size:30px;
+margin-left:10px;
+}
+
+@keyframes bounce{
+from{transform:translateY(0);}
+to{transform:translateY(-10px);}
+}
+
+.confetti{
+position:fixed;
+width:10px;
+height:10px;
+background:red;
+top:-10px;
+animation:fall 3s linear infinite;
+}
+
+@keyframes fall{
+to{
+transform:translateY(100vh) rotate(720deg);
+}
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<h1>🏆 QUIZ NIGHT WINNER 🏆</h1>
+
+<input type="text" id="winnerName" placeholder="Enter Winner Name">
+
+<br>
+
+<button onclick="showWinner()">Celebrate 🎉</button>
+
+<div id="winnerDisplay"></div>
+
+</div>
+
+<script>
+
+function showWinner(){
+let name=document.getElementById("winnerName").value;
+
+if(name==="") return;
+
+let display=document.getElementById("winnerDisplay");
+
+display.innerHTML=
+"<span class='crown'>👑</span>" +
+name +
+"<span class='medal'> 🏅 </span>";
+
+launchConfetti();
+}
+
+function launchConfetti(){
+for(let i=0;i<100;i++){
+let conf=document.createElement("div");
+conf.classList.add("confetti");
+conf.style.left=Math.random()*100+"vw";
+conf.style.backgroundColor=
+"rgb("+
+Math.random()*255+","+
+Math.random()*255+","+
+Math.random()*255+")";
+conf.style.animationDuration=(Math.random()*3+2)+"s";
+document.body.appendChild(conf);
+
+setTimeout(()=>conf.remove(),5000);
+}
+}
+
+</script>
+
+</body>
+</html>

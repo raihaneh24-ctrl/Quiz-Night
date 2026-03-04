@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Final Result</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+<h1 style="margin-bottom:20px;">
+🏆 FINAL SCORE
+</h1>
+
+<h2 id="finalScore" style="font-size:40px; margin-top:10px;"></h2>
+
+<br>
+
+<div style="margin-top:20px; font-size:18px; opacity:0.8;">
+✨ Designed by : <span style="color:#ff00c8; font-weight:bold;">Raihaneh Azimi</span> ✨
+</div>
+
+<br>
+
+<a href="index.html">
+<button class="button">Play Again</button>
+</a>
+
+</div>
+
+<script>
+let score = localStorage.getItem("finalScore");
+
+if(score === null){
+    score = 0;
+}
+
+document.getElementById("finalScore").innerText = score + " / 20";
+</script>
+
+</body>
+</html>

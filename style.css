@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at top, #1a0026, #0d001a 60%);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 700px;
+    max-width: 95%;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 25px;
+    backdrop-filter: blur(25px);
+    box-shadow: 0 0 40px #8a2be2;
+    text-align: center;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+h1 {
+    font-size: 42px;
+    background: linear-gradient(90deg,#00f5ff,#ff00c8);
+   -webkit-background-clip: text;
+    color: transparent;
+}
+
+.question {
+    font-size: 22px;
+    margin: 25px 0;
+}
+
+.option {
+    padding: 14px;
+    margin: 10px 0;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid #444;
+}
+
+.option:hover {
+    transform: scale(1.05);
+    background: rgba(255,255,255,0.15);
+}
+
+.correct {
+    background: linear-gradient(90deg,#00ffcc,#00ff66);
+    color: black;
+    box-shadow: 0 0 15px #00ff99;
+}
+
+.wrong {
+    background: linear-gradient(90deg,#ff416c,#ff4b2b);
+    box-shadow: 0 0 15px #ff1e56;
+}
+
+.buttons {
+    margin-top: 25px;
+}
+
+.button {
+    padding: 10px 25px;
+    margin: 5px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    background: linear-gradient(90deg,#8a2be2,#ff00c8);
+    color: white;
+    transition: 0.3s;
+}
+
+.button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #ff00c8;
+}
+.scoreBox {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #00f5ff;
+}
+.golden-mode {
+    background: #000 !important;
+}
+.golden-mode #question {
+  
+    color: gold;
+    font-size: 26px;
+    text-shadow: 0 0 15px gold;
+    animation:glow 1s infinite alternate;
+}
+.golden-mode .quiz-container{
+    box-shadow: 0 0 40px gold !important;
+    border: 2px solid;
+}
+@keyframes glow{
+    from {text-shadow: 0 0 10px gold;}
+    to {text-shadow: 0 0 25px orange;}
+}
+
+@keyframes fadeIn {
+    from {opacity:0; transform:translateY(20px);}
+    to {opacity:1; transform:translateY(0);}
+}
